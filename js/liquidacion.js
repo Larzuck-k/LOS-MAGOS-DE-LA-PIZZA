@@ -206,10 +206,10 @@ function reset() {
   db.clear();
   tabla.innerHTML = "";
 
-  totalpizza.value = 0;
-  totalrefresco.value = 0;
-  totalpostre.value = 0;
-  total.value = 0;
+  totalpizza.value = 0 + "$";
+  totalrefresco.value = 0+ "$";
+  totalpostre.value = 0+ "$";
+  total.value = 0+ "$";
 }
 
 function agregarpizza(valor) {
@@ -265,11 +265,11 @@ function mostrar() {
 <th scope="row">${llave}</th>
 <td>${dato.producto}</td>
 <td>${dato.tipo}</td>
-<td>${dato.precio}</td>
+<td>$${dato.precio}</td>
 </tr>`;
 
     precio += parseInt(dato.precio);
-    total.value = precio + 1500;
+    total.value = "$"+ (precio + 1500 );
 
     if (dato.tipo == "Pizza") {
       cantidadpizza += 1;
